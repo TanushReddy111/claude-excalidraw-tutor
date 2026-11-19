@@ -55,15 +55,15 @@ Each question is answered at one depth. The user picks it with `brief`, `normal`
 |---|---|---|---|
 | For | a quick orientation, revision, "what is all this" | understanding how one thing works | debugging, changing the code, exam-level understanding |
 | Functions | only the 3–6 that matter; glue code is a gray stub in the map | the functions on the path; light ones are one-line captions | everything on the path, including the light ones |
-| Code photo | **signature only** (the `def` line, plus the return line if it's short) | the core lines (35 at most), skipping docstrings and logging | the full function, split at about 35 lines |
+| Code photo | **same as normal:** the core lines (35 at most), skipping docstrings and logging | the core lines (35 at most), skipping docstrings and logging | the full function, split at about 35 lines |
 | Board per function | **one card**: name, an in/out chip, and **1–2 sentences** on what it does and why it exists | heading, one-line context, contract **or** flow (whichever explains it better), one caption, one gotcha at most | **two rows**: row A has context, contract and flow; row B is full width under both columns, with a traced example, why it's written this way, gotchas, edge cases and complexity |
 | Traces | none | only for the central function of the question | one for each key function |
 | Story thread | one short purple bridge between cards | purple bridges | purple bridges plus open questions |
 | Size | fits on about one screen | about one screen per function | as long as it needs to be |
 
-**brief layout:** stack the cards top to bottom, 40px apart, each full width at most 1100px.
-- Scale every signature photo in a frame by the **same** factor (fit the widest one to 620px), so the code text is the same size on every card.
-- **Left:** the signature photo, at most 800px wide.
+**brief layout:** stack the cards top to bottom, 40px apart.
+- **Left:** the same code photo as in normal (the core lines, at most 800px wide, label above it). Brief cuts the *explanation*, not the code, so the photo is never just the signature.
+- Scale every photo in a frame by the **same** factor (fit the widest one to 800px), so the code text is the same size on every card.
 - **Right:** the in/out chip (blue for inputs, green for outputs, red for side effects), with the 1–2 sentences under it at 20px.
 - The call map at the top still applies. The Remember box is 1 sentence.
 
