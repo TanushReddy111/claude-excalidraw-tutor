@@ -172,7 +172,9 @@ The user can ask from inside Excalidraw. Explain this once, the first time a boa
 - description: `@claude notes on the Excalidraw canvas`
 - `timeout_ms: 1800000`
 
-**Re-arm it every time it expires** while the session is active. It only reads the canvas (`GET /api/elements`), and it prints one JSON line per new `@claude` note, after the note has stopped changing for about 4 seconds.
+**Re-arm it when it expires** while the user is active. It only reads the canvas (`GET /api/elements`), and it prints one JSON line per new `@claude` note, after the note has stopped changing for about 6 seconds. A bare `@claude` with nothing after it is ignored, so a half-typed note never fires.
+
+**Don't re-arm forever:** if two watches in a row expire with no notes, stop re-arming and tell the user in one line that `setup` restarts it.
 
 **When a note event arrives:**
 1. **Work out what it refers to.** Check, in this order:

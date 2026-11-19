@@ -27,7 +27,7 @@ Claude Code ──(MCP or CLI)──► mcp-excalidraw-server ──► live can
 
 - **Drawing:** [`mcp-excalidraw-server`](https://github.com/yctimlin/mcp_excalidraw) (MIT, community project) runs a local canvas and exposes it as MCP tools *and* a CLI. The MCP tools are recommended. If they aren't loaded in the current session, the styles fall back to the CLI and tell you how to get the MCP.
 - **Source images:** PDFs are rendered page by page with Poppler's `pdftoppm`. Code is rendered with Pygments into syntax-highlighted PNGs with real line numbers. Both are embedded in the canvas as image elements.
-- **`@claude` notes:** `tools/excalidraw-ask-watch.py` reads `GET /api/elements` every 2 seconds. It is **read-only**. It prints one line per new note that starts with `@claude`, after you've stopped typing. Claude Code's Monitor tool turns each line into a message, so Claude answers on the canvas.
+- **`@claude` notes:** `tools/excalidraw-ask-watch.py` reads `GET /api/elements` every 2 seconds. It is **read-only**. It prints one line per new note that starts with `@claude` and has text after it, once the note has stayed the same for about 6 seconds (so half-typed notes don't fire). Notes it has already handled are remembered in `~/.cache/excalidraw-ask/seen.txt`. Claude Code's Monitor tool turns each line into a message, so Claude answers on the canvas.
   - Code edits requested this way still go through Claude Code's normal permission prompts.
   - The watcher only works while a Claude Code session is open with the Code Explainer style. Each watch lasts up to 30 minutes, and the style re-arms it.
 
