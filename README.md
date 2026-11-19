@@ -17,9 +17,13 @@ The teaching rules are based on learning research (worked examples, split attent
 
 ## How it works
 
-![How it works: your sources become images, Claude Code draws on a local Excalidraw canvas through mcp-excalidraw-server, and @claude notes on the canvas come back to Claude through a read-only watcher](docs/how-it-works.svg)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/how-it-works-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="docs/how-it-works.svg">
+  <img alt="How it works: your sources become images, Claude Code draws on a local Excalidraw canvas through mcp-excalidraw-server, and @claude notes on the canvas come back to Claude through a read-only watcher" src="docs/how-it-works.svg">
+</picture>
 
-The diagram was drawn on the canvas by these tools. Its editable source is [`docs/how-it-works.excalidraw`](docs/how-it-works.excalidraw), which you can open at excalidraw.com or in the Obsidian Excalidraw plugin.
+The diagram was drawn on the canvas by these tools, with a light and a dark version that GitHub picks from your theme. Its editable source is [`docs/how-it-works.excalidraw`](docs/how-it-works.excalidraw), which you can open at excalidraw.com or in the Obsidian Excalidraw plugin.
 
 - **Drawing:** [`mcp-excalidraw-server`](https://github.com/yctimlin/mcp_excalidraw) (MIT, community project) runs a local canvas and exposes it as MCP tools *and* a CLI. The MCP tools are recommended. If they aren't loaded in the current session, the styles fall back to the CLI and tell you how to get the MCP.
 - **Source images:** PDFs are rendered page by page with Poppler's `pdftoppm`. Code is rendered with Pygments into syntax-highlighted PNGs with real line numbers. Both are embedded in the canvas as image elements.
