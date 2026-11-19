@@ -1,0 +1,4 @@
+__pycache__/
+*.pyc
+boards/
+.DS_Store
